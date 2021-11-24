@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Shopping.Goods
+namespace Shopping.DTO
 {
-  public  class commonGoods: AuditedAggregateRoot<int>
+  public  class ShowCommonGoodsDTO
     {
-
         /// <summary>
-    ///  序列
-    /// </summary>
+        ///  序列
+        /// </summary>
         public int sequence { get; set; }
         /// <summary>
         /// 上架
@@ -29,7 +25,7 @@ namespace Shopping.Goods
         /// <summary>
         /// 图片
         /// </summary>
-        public  string img { get; set; }
+        public string img { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>
@@ -64,5 +60,9 @@ namespace Shopping.Goods
         public int brand { get; set; }
 
         public DateTime updateCreated { get; set; }
+
+        public string brandName { get; set; }
+
+        public string merchandiseName { get; set; }
     }
 }

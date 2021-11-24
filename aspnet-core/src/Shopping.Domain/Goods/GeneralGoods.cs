@@ -7,12 +7,11 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Shopping.Goods
 {
-  public  class commonGoods: AuditedAggregateRoot<int>
+   public class GeneralGoods : AuditedAggregateRoot<int>
     {
-
         /// <summary>
-    ///  序列
-    /// </summary>
+        /// 序列
+        /// </summary>
         public int sequence { get; set; }
         /// <summary>
         /// 上架
@@ -27,21 +26,21 @@ namespace Shopping.Goods
         /// </summary>
         public bool hot { get; set; }
         /// <summary>
-        /// 图片
+        /// 封面图片
         /// </summary>
-        public  string img { get; set; }
+        public string img { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>
-        public string goodsName { get; set; }
+        public string goodName { get; set; }
         /// <summary>
         /// 排序
         /// </summary>
         public string ordry { get; set; }
         /// <summary>
-        /// 佣金
+        /// 佣金方式
         /// </summary>
-        public string brokerage { get; set; }
+        public string brokerAge { get; set; }
         /// <summary>
         /// 销售价
         /// </summary>
@@ -49,20 +48,22 @@ namespace Shopping.Goods
         /// <summary>
         /// 成本价
         /// </summary>
-        public string costPice { get; set; }
+        public string costPice { get; set; } 
         /// <summary>
         /// 市场价
         /// </summary>
         public string marketPrice { get; set; }
         /// <summary>
-        /// 分类
-        /// </summary>
-        public int classify { get; set; }
-        /// <summary>
         /// 品牌
         /// </summary>
         public int brand { get; set; }
-
+       /// <summary>
+       /// 分类
+       /// </summary>
+        public int classify { get; set; }
+        /// <summary>
+        /// 更新时间
+        /// </summary>
         public DateTime updateCreated { get; set; }
     }
 }

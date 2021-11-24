@@ -60,6 +60,9 @@ namespace Shopping.EntityFrameworkCore
         public DbSet<brand> brand { get; set; }
         public DbSet<GoodsKind> GoodsKind { get; set; }
         public DbSet<commonGoods> commonGoods { get; set; }
+        public DbSet<GeneralGoods> generalGoods { get; set; }
+        public DbSet<GoodSKUValues> goodSKUValues { get; set; }
+        public DbSet<GoodsSKU> goodsSKUs { get; set; }
         #endregion
         public ShoppingDbContext(DbContextOptions<ShoppingDbContext> options)
             : base(options)
