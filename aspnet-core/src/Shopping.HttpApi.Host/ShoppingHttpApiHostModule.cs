@@ -31,6 +31,7 @@ using Volo.Abp.VirtualFileSystem;
 using Shopping.Eumes;
 using Microsoft.AspNetCore.Http;
 using Volo.Abp.Json;
+using Volo.Abp.Caching;
 
 namespace Shopping
 {
@@ -44,7 +45,8 @@ namespace Shopping
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
         typeof(AbpAccountWebIdentityServerModule),
         typeof(AbpAspNetCoreSerilogModule),
-        typeof(AbpSwashbuckleModule)
+        typeof(AbpSwashbuckleModule),
+        typeof(AbpCachingModule)
         
 
 
@@ -65,6 +67,7 @@ namespace Shopping
             ConfigureVirtualFileSystem(context);
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context, configuration);
+          
             context.Services.ConfigureApplicationCookie(options =>
            options.Events.OnRedirectToLogin = httpContext =>
            {

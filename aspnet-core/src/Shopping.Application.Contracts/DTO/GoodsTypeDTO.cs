@@ -23,18 +23,13 @@ namespace Shopping.DTO
         /// <summary>
         /// 是否显示
         /// </summary>
-        public bool isShow { get; set; }
-        /// <summary>
-        /// 分类名称
-        /// </summary>
-        public string systematicName { get; set; }
-        /// <summary>
-        ///  上级分类
-        /// </summary>
-        public string upSystematic { get; set; }
+        public bool isShow { get; set; } = true;
+ 
         /// <summary>
         /// 类型
         /// </summary>
         public int type { get; set; }
+
+        public List<GoodsTypeDTO> children { get; set; }
     }
 }
