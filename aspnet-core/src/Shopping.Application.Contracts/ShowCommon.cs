@@ -8,8 +8,9 @@ namespace Shopping
   public  interface ShowCommon
     {
         List<ShowCommonGoodsDTO> ShowAsys();
-       
-      
 
+        List<ShowCommonGoodsDTO> UpAsys();
+
+        List<ShowCommonGoodsDTO> DownAsys();
     }
 }

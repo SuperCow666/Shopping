@@ -65,5 +65,7 @@ namespace Shopping.Goods
         /// 更新时间
         /// </summary>
         public DateTime updateCreated { get; set; }
+
+
     }
 }

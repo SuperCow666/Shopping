@@ -22,6 +22,49 @@ namespace Shopping
             _brand = brand;
             _Kind = Kind;
         }
+
+        [HttpGet, Route("DownAsys")]
+        public List<ShowCommonGoodsDTO> DownAsys()
+        {
+            var info = (from a in _comm
+                        join b in _brand
+                        on a.brand equals b.Id
+                        join c in _Kind
+                        on a.classify equals c.Id
+                        select new ShowCommonGoodsDTO
+                        {
+                            sequence = a.sequence,
+                            brandName = b.brandName,
+                            brand = b.Id,
+                            classify = c.Id,
+                            goodsName = a.goodsName,
+                            costPice = a.costPice,
+                            hot = a.hot,
+                            img = a.img,
+                            ordry = a.ordry,
+                            marketPrice = a.marketPrice,
+                            putAway = a.putAway,
+                            salesPrice = a.salesPrice,
+                            updateCreated = a.updateCreated,
+                            brokerage = a.brokerage,
+                            merchandiseName = c.merchandiseName,
+                            recommend = a.recommend
+
+
+
+
+                        }).ToList();
+            var list = info.Where(x => x.putAway == false).ToList();
+            if (list != null)
+            {
+                return list;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         [HttpGet,Route("ShowAsys")]
         public List<ShowCommonGoodsDTO> ShowAsys()
         {
@@ -53,7 +96,50 @@ namespace Shopping
 
 
                         }).ToList();
+            
             return info;
+        }
+        [HttpGet,Route("UpAsys")]
+        public List<ShowCommonGoodsDTO> UpAsys()
+        {
+            var info = (from a in _comm
+                        join b in _brand
+                        on a.brand equals b.Id
+                        join c in _Kind
+                        on a.classify equals c.Id
+                        select new ShowCommonGoodsDTO
+                        {
+                            sequence = a.sequence,
+                            brandName = b.brandName,
+                            brand = b.Id,
+                            classify = c.Id,
+                            goodsName = a.goodsName,
+                            costPice = a.costPice,
+                            hot = a.hot,
+                            img = a.img,
+                            ordry = a.ordry,
+                            marketPrice = a.marketPrice,
+                            putAway = a.putAway,
+                            salesPrice = a.salesPrice,
+                            updateCreated = a.updateCreated,
+                            brokerage = a.brokerage,
+                            merchandiseName = c.merchandiseName,
+                            recommend = a.recommend
+
+
+
+
+                        }).ToList();
+          var  list = info.Where(x => x.putAway == true).ToList();
+            if (list != null)
+            {
+                return list;
+            }
+            else
+            {
+                return null;
+            }
+           
         }
     }
 }

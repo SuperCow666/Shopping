@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shopping.Goods;
+using Shopping.Sku;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -62,7 +63,9 @@ namespace Shopping.EntityFrameworkCore
         public DbSet<commonGoods> commonGoods { get; set; }
         public DbSet<GeneralGoods> generalGoods { get; set; }
         public DbSet<GoodSKUValues> goodSKUValues { get; set; }
-        public DbSet<GoodsSKU> goodsSKUs { get; set; }
+        public DbSet<tbCommodityInfo> tbCommodityInfos { get; set; }
+        public DbSet<tbCommoditySpecifica>  tbCommoditySpecificas { get; set; }
+        public DbSet<TbSaleNum> TbSaleNums { get; set; }
         #endregion
         public ShoppingDbContext(DbContextOptions<ShoppingDbContext> options)
             : base(options)
